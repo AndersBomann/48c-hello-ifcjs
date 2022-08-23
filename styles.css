@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Questrial', sans-serif;
+    font-size: 1rem;
+    color: var(--glow-color);
+    font-weight: bold;
+
+}
+
+:root {
+    --dark-mode-background-color: #212121;
+    --btn-color: rgb(100, 61, 136);
+
+    --glow-color: rgb(217, 176, 255);
+    --glow-transparent-color: rgba(217, 176, 255, 0.15);
+    --enhanced-glow-color: rgb(231, 206, 255);
+    --glow-spread-color: rgba(191, 123, 255, 0.781);
+
+    --second-glow-color: rgb(176, 252, 255);
+    --second-glow-transparent-color: rgba(176, 252, 255, 0.15);
+    --second-enhanced-glow-color: rgb(190, 252, 255);
+    --second-glow-spread-color: rgba(123, 255, 255, 0.781);
+}
+
+button {
+    border: .25em solid var(--glow-color);
+    border-radius: 1em;
+    padding: 1em 2em;
+    color: var(--glow-color);
+    font-size: 2rem;
+    background-color: var(--btn-color);
+    outline: none;
+    box-shadow: 0 0 1em .25em var(--glow-color),
+           0 0 4em 1em var(--glow-spread-color),
+           inset 0 0 .75em .25em var(--glow-color);
+    text-shadow: 0 0 .5em var(--glow-color);
+    position: relative;
+    transition: all 0.3s;
+}
+
+button::after {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 120%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--glow-spread-color);
+    filter: blur(2em);
+    opacity: .7;
+    transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+}
+
+button:hover {
+    color: var(--enhanced-glow-color);
+    background-color: var(--glow-color);
+    box-shadow: 0 0 1em .25em var(--glow-color),
+           0 0 4em 2em var(--glow-spread-color),
+           inset 0 0 .75em .25em var(--glow-color);
+}
+
+.enter-container {
+    background-color: var(--dark-mode-background-color);
+    height: 90vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+#viewer-container {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.ifcjs-logo {
+    background-color: var(--dark-mode-background-color);
+    height: 10vh;
+    margin: 0rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+#ifcjs-image {
+    margin: 1rem;
+}
+#ifcjs-image:hover {
+    animation: spin-ifcjs .3s linear infinite;
+    box-shadow: 0 0 1em .25em var(--second-glow-color),
+           0 0 4em 1em var(--second-glow-spread-color),
+           inset 0 0 .75em .25em var(--second-glow-color);
+}
+
+@keyframes spin-ifcjs {
+    to{
+           transform: rotate(360deg);
+    }
+}
+

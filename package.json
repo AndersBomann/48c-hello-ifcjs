@@ -1,0 +1,29 @@
+{
+  "name": "48c-hello-ifcjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "rollup -c",
+    "watch": "rollup -c -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndersBomann/48c-hello-ifcjs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AndersBomann/48c-hello-ifcjs/issues"
+  },
+  "homepage": "https://github.com/AndersBomann/48c-hello-ifcjs#readme",
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "rollup": "^2.78.1"
+  },
+  "dependencies": {
+    "three": "^0.135.0",
+    "web-ifc-viewer": "^1.0.209"
+  }
+}
