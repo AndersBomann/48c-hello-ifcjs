@@ -121906,4 +121906,4 @@ async function loadIfc(url) {
     viewer.shadowDropper.renderShadow(model.modelID);
 }
 
-loadIfc('./01.ifc');
+loadIfc('./model.ifc');
